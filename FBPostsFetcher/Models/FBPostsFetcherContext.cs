@@ -20,12 +20,12 @@
         // 針對您要包含在模型中的每種實體類型新增 DbSet。如需有關設定和使用
         // Code First 模型的詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkId=390109。
 
-        // public virtual DbSet<MyEntity> MyEntities { get; set; }
+        public virtual DbSet<Post> Posts { get; set; }
     }
 
-    //public class MyEntity
-    //{
-    //    public int Id { get; set; }
-    //    public string Name { get; set; }
-    //}
+    public class Post
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+    }
 }
