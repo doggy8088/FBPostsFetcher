@@ -36,5 +36,17 @@ namespace FBPostsFetcher.Properties {
                 this["FBAccessToken"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("119279178101235")]
+        public string FBID {
+            get {
+                return ((string)(this["FBID"]));
+            }
+            set {
+                this["FBID"] = value;
+            }
+        }
     }
 }
