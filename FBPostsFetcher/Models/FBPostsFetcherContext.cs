@@ -1,6 +1,7 @@
 ﻿namespace FBPostsFetcher.Models
 {
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity;
@@ -23,21 +24,46 @@
         // Code First 模型的詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkId=390109。
 
         public virtual DbSet<Post> Posts { get; set; }
+        public virtual DbSet<From> Froms { get; set; }
     }
 
     public class Post
     {
+        public Post()
+        {
+            this.attachments = new List<Attachment>();
+        }
+
         [Key]
         // Disable Auto-increment Feature
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public string id { get; set; }
+        public string fb_id { get; set; }
+        public string raw_json { get; set; }
+        public From from { get; set; }
         public string message { get; set; }
         public string created_time { get; set; }
         public string permalink_url { get; set; }
 
         public string link { get; set; }
+
+        public List<Attachment> attachments { get; set; }
         //public string name { get; set; }
         //public string description { get; set; }
         //public string caption { get; set; }
+    }
+
+    public class From
+    {
+        public string id { get; set; }
+        public string name { get; set; }
+    }
+
+    public class Attachment
+    {
+        public int id { get; set; }
+        public string type { get; set; }
+        public string title { get; set; }
+        public string url { get; set; }
     }
 }

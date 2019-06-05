@@ -46,5 +46,17 @@ namespace FBPostsFetcher.Properties {
                 this["FBID"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ContinueLastError {
+            get {
+                return ((bool)(this["ContinueLastError"]));
+            }
+            set {
+                this["ContinueLastError"] = value;
+            }
+        }
     }
 }

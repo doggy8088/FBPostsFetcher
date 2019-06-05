@@ -8,5 +8,8 @@
     <Setting Name="FBID" Type="System.String" Scope="User">
       <Value Profile="(Default)">119279178101235</Value>
     </Setting>
+    <Setting Name="ContinueLastError" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

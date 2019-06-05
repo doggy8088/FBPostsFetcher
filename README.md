@@ -22,6 +22,9 @@ FBPostsFetcher 可用來取得特定個人與粉絲專頁所有貼文。
         - `me/feed?pretty=0&fields=id,from,name,message,story,created_time,link,description,caption,attachments&limit=100`
         - `119279178101235/feed?pretty=0&fields=id,from,name,message,story,created_time,link,description,caption,attachments&limit=100`
       - 請透過 [Find your Facebook ID](https://findmyfbid.com/) 取得**用戶編號**(`FBID`)
+      - 設定 `ContinueLastError`  為 `True` 可以讓錯誤發生時，不會從頭開始抓取訊息！
+        - 當發生錯誤時，會自動建立 `exception_point.txt` 中斷點檔案，保存發生錯誤時的 URL 為何。
+        - 當所有資料都抓取回來後，中斷點檔案 `exception_point.txt` 將會被刪除。
 
 ## 相關連結
 
