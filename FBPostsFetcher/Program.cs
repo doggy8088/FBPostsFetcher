@@ -31,10 +31,8 @@ namespace FBPostsFetcher
                 $"{Settings.Default.FBID}/feed", new
                 {
                     fields = new[] {
-                        "id", "message", "created_time", "permalink_url",
-                        "from",
-                        "link",
-                        "attachments{media,type,subattachments}"
+                        "id", "message", "created_time", "permalink_url", "link",
+                        "from"
                     },
                     limit = 100,
                     after = after
@@ -81,47 +79,6 @@ namespace FBPostsFetcher
                 }
 
                 Console.WriteLine($"{++i}\t{post.created_time} {post.permalink_url}\t{saving}");
-
-                #region Debug statements
-                //msg_count++;
-                //Console.WriteLine("--- " + msg_count);
-                //Console.WriteLine("ＩＤ: " + item.id);
-                //Console.WriteLine("訊息: " + item.message);
-                //Console.WriteLine("時間: " + item.created_time);
-
-                //if (IsPropertyExist(item, "link"))
-                //{
-                //    Console.WriteLine("連結: " + item.link);
-                //}
-
-                //if (IsPropertyExist(item, "name"))
-                //{
-                //    Console.WriteLine("名稱: " + item.name);
-                //}
-                //if (IsPropertyExist(item, "description"))
-                //{
-                //    Console.WriteLine("描述: " + item.description);
-                //}
-                //if (IsPropertyExist(item, "caption"))
-                //{
-                //    Console.WriteLine("標題: " + item.caption);
-                //}
-
-                //var i = 0;
-                //if (IsPropertyExist(item, "data"))
-                //{
-                //    foreach (var att in item.attachments.data)
-                //    {
-                //        i++;
-                //        if (att.type == "share")
-                //        {
-                //            Console.WriteLine($"附件: {i}\t {att.type}");
-                //        }
-                //    }
-                //}
-
-                //Console.WriteLine(); 
-                #endregion
             }
 
             db.SaveChanges();
