@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="FBAccessToken" Type="System.String" Scope="User">
-      <Value Profile="(Default)">EAAHTp6Cw1ZB8BAHBJrQL5z9HxxZCIGZAs6Kdj95ONnC9OozqZA5LAciWB5oAVZC2An1f9zY1nYjRzEfxqsOeGE2eUust5rq7iWrLd9lTlo2UJtCreLJ7EQwIYgJypRGCkrDTwpPBeuFLs7QVmSuvsNic64wE8GPpyVvktqN6mROPqHZB1TEEgpspwcz8D4H98Gmx4mEZCGs3ZBoXnDZC9lSZAJ</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="FBID" Type="System.String" Scope="User">
       <Value Profile="(Default)">119279178101235</Value>

@@ -25,9 +25,7 @@ namespace FBPostsFetcher.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("EAAHTp6Cw1ZB8BAHBJrQL5z9HxxZCIGZAs6Kdj95ONnC9OozqZA5LAciWB5oAVZC2An1f9zY1nYjRzEfx" +
-            "qsOeGE2eUust5rq7iWrLd9lTlo2UJtCreLJ7EQwIYgJypRGCkrDTwpPBeuFLs7QVmSuvsNic64wE8GPp" +
-            "yVvktqN6mROPqHZB1TEEgpspwcz8D4H98Gmx4mEZCGs3ZBoXnDZC9lSZAJ")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string FBAccessToken {
             get {
                 return ((string)(this["FBAccessToken"]));

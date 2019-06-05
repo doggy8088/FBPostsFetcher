@@ -1,6 +1,8 @@
 ﻿namespace FBPostsFetcher.Models
 {
     using System;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity;
     using System.Linq;
 
@@ -25,7 +27,17 @@
 
     public class Post
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        [Key]
+        // Disable Auto-increment Feature
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public string id { get; set; }
+        public string message { get; set; }
+        public string created_time { get; set; }
+        public string permalink_url { get; set; }
+
+        public string link { get; set; }
+        //public string name { get; set; }
+        //public string description { get; set; }
+        //public string caption { get; set; }
     }
 }
