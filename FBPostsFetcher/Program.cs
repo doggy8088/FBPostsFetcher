@@ -33,6 +33,7 @@ namespace FBPostsFetcher
         }
 
         static int i = 0;
+        static int retry_count = 0;
 
         private static void SaveToDB(FacebookClient fb, FBPostsFetcherContext db, string next = "")
         {
@@ -64,7 +65,22 @@ namespace FBPostsFetcher
                 catch (FacebookOAuthException ex)
                 {
                     File.WriteAllText("exception_point.txt", next);
-                    throw ex;
+
+                    if (retry_count <= 10 && ex.Message.Contains("OAuthException - #1"))
+                    {
+                        retry_count++;
+
+                        Console.WriteLine($"ERROR OCCURRED: {ex.Message}");
+
+                        Console.WriteLine($"Retry #{retry_count} right after {10000 * retry_count / 1000} seconds ...");
+                        Thread.Sleep(10000 * retry_count);
+                        SaveToDB(fb, db, next);
+                        return;
+                    }
+                    else
+                    {
+                        throw ex;
+                    }
                 }
             }
 
